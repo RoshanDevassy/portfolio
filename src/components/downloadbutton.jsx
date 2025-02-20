@@ -5,7 +5,7 @@ export default function DownloadButton() {
     <>
       <a href="files/wrkdiary.pdf" download="wrkdiary.pdf" className="w-fit">
         <button className="h-10 w-60 bg-blue-900 text-white">
-          Download Resum
+          Download Resume
         </button>
       </a>
     </>
