@@ -10,7 +10,7 @@ export default function Projects() {
     {
       id: 2,
       projectname: "Budget Calculator",
-      link: "https://web-budget-calc.netlify.app/",
+      link: "https://calc-budgeting.netlify.app/",
     },
   ];
 
