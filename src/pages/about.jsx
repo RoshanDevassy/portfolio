@@ -1,53 +1,80 @@
 import { useParallax } from "react-scroll-parallax";
 
-
 export default function AboutPage() {
-
   const parallax = useParallax({
     translateY: [-0, 15],
   });
 
-  const skills = [
+  const frontendSkills = [
     {
       id: 1,
-      skill: "HTML, CSS, JavaScript",
+      skill: "HTML",
     },
     {
       id: 2,
-      skill: "Tailwind CSS",
+      skill: "CSS",
     },
     {
       id: 3,
-      skill: "React.js",
+      skill: "Tailwind CSS",
     },
     {
       id: 4,
-      skill: "Next.js (Familiarity)",
+      skill: "JavaScript",
     },
     {
       id: 5,
-      skill: "Python",
+      skill: "React.js",
     },
     {
       id: 6,
+      skill: "Next.js (Familiarity)",
+    },
+  ];
+
+  const backendSkills = [
+    {
+      id: 1,
+      skill: "Python",
+    },
+    {
+      id: 2,
       skill: "Django (REST API Development)",
     },
     {
-      id: 7,
+      id: 3,
+      skill: "SQLite",
+    },
+    {
+      id: 4,
+      skill: "PostgreSQL",
+    },
+  ];
+
+  const devTools = [
+    {
+      id: 1,
       skill: "Git & GitHub",
+    },
+    {
+      id: 2,
+      skill: "Visual Studio Code",
     },
   ];
 
   return (
     <>
-      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white" >
+      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white">
         <div
           className="absolute h-full w-full bg-[url('/images/bg_education.png')] bg-slate-800 -z-50 bg-contain bg-blend-screen bg-repeat-y"
           ref={parallax.ref}
         ></div>
 
         {/* About me Wrapper */}
-        <section className=" w-full lg:w-[85%] c-min-h-max-w:w-full bg-black relative c-min-h-max-w:top-0 lg:-top-44 2xl:-top-40 flex flex-col px-2 py-2 pt-14 pb-14 md:px-0 gap-3 md:gap-5 text-white" id="about">
+        <section
+          className=" w-full lg:w-[85%] c-min-h-max-w:w-full bg-white dark:bg-black relative c-min-h-max-w:top-0 lg:-top-44 2xl:-top-40 flex flex-col px-2 py-2 pt-14 pb-14 md:px-0 gap-3 md:gap-5"
+          id="about"
+        >
           <div className="flex place-content-center">
             <h1 className=" text-2xl md:text-4xl 2xl:text-6xl font-serif font-black">
               About Me
@@ -73,43 +100,49 @@ export default function AboutPage() {
         </section>
         <div className="flex flex-col gap-20 w-full items-center">
           {/* EDUCATION DETAILS Wrapper */}
-          <section className="flex flex-col gap-5 pt-14 lg:w-[85%] text-white bg-black">
+          <section className="flex flex-col gap-5 pt-14 lg:w-[85%] bg-white dark:bg-black">
             <div className="flex justify-center items-center">
               <h1 className=" text-2xl font-black md:text-6xl font-serif ">
                 Education
               </h1>
             </div>
-            <table className="  bg-opacity-90 flex flex-col py-10 gap-3 font-black lg:text-lg">
+            <table className="  bg-opacity-90 flex flex-col py-10 font-black lg:text-lg">
               <thead>
-                <tr className="grid grid-cols-4 md:grid-cols-5">
+                <tr className="grid grid-cols-4 md:grid-cols-5 bg-gray-200 dark:bg-gray-600 items-center">
                   <th>Course</th>
                   <th className=" md:col-span-2">College</th>
                   <th>
                     Percentage/
                     <br />
-                    Cgpa
+                    CGPA
                   </th>
                   <th>Year</th>
                 </tr>
               </thead>
-              <tbody className="grid grid-rows-4 grid-cols-1 gap-2 lg:gap-8">
-                <tr className="grid grid-cols-4 md:grid-cols-5 place-items-center">
+              <tbody className="grid grid-rows-4 grid-cols-1 ">
+                <tr className=" box-content grid grid-cols-4 md:grid-cols-5 place-items-center py-1">
                   <td>M.C.A.</td>
-                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">Dr.SNS Rajalakshmi College of Arts and Science</td>
-                  <td>80%</td>
+                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">
+                    Dr.SNS Rajalakshmi College of Arts and Science
+                  </td>
+                  <td>-</td>
                   <td>2023 - 2025</td>
                 </tr>
                 <tr className="grid grid-cols-4 md:grid-cols-5 place-items-center">
                   <td>B.C.A.</td>
-                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">Kongunadu Arts and Science College</td>
-                  <td>78%</td>
+                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">
+                    Kongunadu Arts and Science College
+                  </td>
+                  <td>7.38</td>
                   <td>2020 - 2023</td>
                 </tr>
                 <tr className="grid grid-cols-4 md:grid-cols-5 place-items-center">
                   <td className=" tracking-wider">
                     12<sup>th</sup>
                   </td>
-                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">Metro Matric Higher Secondary School</td>
+                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">
+                    Metro Matric Higher Secondary School
+                  </td>
                   <td>78%</td>
                   <td>2019 - 2020</td>
                 </tr>
@@ -117,7 +150,9 @@ export default function AboutPage() {
                   <td className=" tracking-wider">
                     10<sup>th</sup>
                   </td>
-                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">Metro Matric Higher Secondary School</td>
+                  <td className=" md:col-span-2 md:justify-self-start lg:justify-self-center">
+                    Metro Matric Higher Secondary School
+                  </td>
                   <td>87%</td>
                   <td>2017 - 2018</td>
                 </tr>
@@ -125,8 +160,8 @@ export default function AboutPage() {
             </table>
           </section>
           {/* PROFESSIONAL Wrapper */}
-          <section className="flex flex-col gap-10 md:w-[85%] bg-black  px-2 py-5 md:py-16 w-full">
-            <div className="flex flex-col items-center text-white">
+          <section className="flex flex-col gap-10 md:w-[85%] bg-white dark:bg-black  px-2 py-5 md:py-16 w-full">
+            <div className="flex flex-col items-center">
               <h1 className=" text-2xl md:text-6xl font-extrabold ">
                 PROFESSIONAL
               </h1>
@@ -134,17 +169,46 @@ export default function AboutPage() {
                 TECHNICAL SKILLS KNOWN
               </h3>
             </div>
-            <div className=" grid  gap-5 md:place-items-center  c-max-w-xs:grid-rows-3 c-max-w-xs:grid-cols-2 md:text-base lg:text-lg">
-              {skills.map((s) => (
-                <div
-                  key={s.id}
-                  className={` font-semibold md:font-black font-serif bg-white text-black flex justify-center items-center rounded-md px-3  ${
-                    1 === s.id ? " col-span-3 c-max-w-xs:col-span-2 " : ""
-                  } min-h-12 md:min-w-32`}
-                >
-                  {s.skill}
+            <div className="md:text-base lg:text-lg">
+              {/* Frontend */}
+              <div className=" pb-5">
+                <h2 className=" text-center text-xl font-bold pb-2">
+                  Frontend
+                </h2>
+                <div className=" flex justify-center">
+                  {frontendSkills.map((s) =>
+                    frontendSkills[frontendSkills.length - 1].skill != s.skill
+                      ? s.skill + ", "
+                      : s.skill
+                  )}
                 </div>
-              ))}
+              </div>
+              {/* Backend */}
+              <div className=" pb-5">
+                <h2 className=" text-center text-xl font-bold pb-2">
+                  Backend
+                </h2>
+                <div className=" flex justify-center">
+                  {backendSkills.map((s) =>
+                    backendSkills[backendSkills.length - 1].skill != s.skill
+                      ? s.skill + ", "
+                      : s.skill
+                  )}
+                </div>
+              </div>
+              {/* Development Tools */}
+              <div className=" pb-5">
+                <h2 className=" text-center text-xl font-bold pb-2">
+                  Development Tools
+                </h2>
+                <div className=" flex justify-center">
+                  {devTools.map((s) =>
+                    devTools[devTools.length - 1].skill != s.skill
+                      ? s.skill + ", "
+                      : s.skill
+                  )}
+                </div>
+              </div>
             </div>
           </section>
         </div>

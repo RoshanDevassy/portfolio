@@ -41,13 +41,13 @@ export default function ContactPage() {
                 </div>
               </a>
               <div className="flex gap-2">
-               <img src="images/phone.png" alt="call" className="h-6"/> +91 85239 81494
+               <img src="images/whatsapp_phone.png" alt="call" className="h-6"/> +91 85239 81494
             </div>
             </div>
             
           </section>
           {/* Form */}
-          <section className=" md:w-[45%] flex md:landscape:justify-center lg:text-lg">
+          {/* <section className=" md:w-[45%] flex md:landscape:justify-center lg:text-lg">
             <form
               action=""
               className="flex flex-col gap-5 min-w-[250px] max-xs:px-3"
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 </button>
               </div>
             </form>
-          </section>
+          </section> */}
         </div>
       </section>
     </>
