@@ -14,15 +14,15 @@ export default function AboutPage() {
     },
     {
       id: 2,
-      skill: "ReactJs",
+      skill: "Tailwind CSS",
     },
     {
       id: 3,
-      skill: "NextJs",
+      skill: "React.js",
     },
     {
       id: 4,
-      skill: "Tailwind CSS",
+      skill: "Next.js (Familiarity)",
     },
     {
       id: 5,
@@ -30,7 +30,7 @@ export default function AboutPage() {
     },
     {
       id: 6,
-      skill: "Django",
+      skill: "Django (REST API Development)",
     },
     {
       id: 7,
