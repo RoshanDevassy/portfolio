@@ -22,11 +22,11 @@ export default function HamburgerMenu() {
         onClick={toggleMenu}
       >
         <span className={`block h-1 w-full bg-white rounded transition-transform duration-300 origin-left ${
-            isOpen ? 'rotate-[38deg] translate-y-[0.29rem]' : ''}`}></span>
+            isOpen ? 'rotate-[40deg] translate-y-[0.29rem]' : ''}`}></span>
         <span className={`block h-1 w-full bg-white rounded transition-transform duration-300 origin-left ${
             isOpen ? ' opacity-0' : ''}`}></span>
         <span className={`block h-1 w-full bg-white rounded transition-transform duration-300 origin-left ${
-            isOpen ? '-rotate-[38deg] translate-y-[0.29rem]' : ''}`}></span>
+            isOpen ? '-rotate-[40deg] translate-y-[0.29rem]' : ''}`}></span>
       </button>
 
       {/* Navigation Menu */}
@@ -53,66 +53,3 @@ export default function HamburgerMenu() {
     </div>
   );
 }
-
-
-
-
-/* import { Link } from "react-router-dom";
-
-export default function HamburgerMenu() {
-  return (
-    <>
-      <div className="relative h-7 w-9 flex flex-col justify-between hover:cursor-pointer">
-        <div className=" h-1 w-full bg-white rounded-sm"></div>
-        <div className=" h-1 w-full bg-white rounded-sm"></div>
-        <div className=" h-1 w-full bg-white rounded-sm"></div>
-        <div className="absolute bg-black z-10">
-          <nav className="hidden c-base:flex justify-center items-center h-full  ">
-            <ul className=" flex gap-2 md:gap-5 justify-self-center font-bold font-serif">
-              <li>
-                <Link
-                  to="/"
-                  className={`${
-                    location.pathname === "/" ? "border-b border-green-400" : ""
-                  } custom-base:text-xl`}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/#about" className=" custom-base:text-xl">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/projects"
-                  className={`${
-                    location.pathname === "/projects"
-                      ? "border-b border-green-400"
-                      : ""
-                  } custom-base:text-xl`}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className={`${
-                    location.pathname === "/contact"
-                      ? "border-b border-green-400"
-                      : ""
-                  } custom-base:text-xl`}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </>
-  );
-}
- */

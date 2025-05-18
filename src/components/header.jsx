@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-slate-900 h-14 w-full min-w-[250px] c-base:sticky top-0 right-0 left-0 overflow-visible z-50 text-white relative">
+      <header className="sticky bg-slate-900 h-14 w-full min-w-[250px] top-0 right-0 left-0 overflow-visible z-50 text-white">
         <nav className="hidden c-base:flex justify-center items-center h-full  ">
           <ul className=" flex gap-2 md:gap-5 justify-self-center font-bold font-serif">
             <li>

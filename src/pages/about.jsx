@@ -175,24 +175,25 @@ export default function AboutPage() {
                 <h2 className=" text-center text-xl font-bold pb-2">
                   Frontend
                 </h2>
-                <div className=" flex justify-center">
+                <div className="flex flex-wrap justify-center">
                   {frontendSkills.map((s) =>
-                    frontendSkills[frontendSkills.length - 1].skill != s.skill
-                      ? <p>{s.skill + ", "}</p>
-                      : <p>{s.skill}</p>
+                    frontendSkills[frontendSkills.length - 1].skill !=
+                    s.skill ? (
+                      <span key={s.id}>{s.skill + ", "}</span>
+                    ) : (
+                      <span key={s.id}>{s.skill}</span>
+                    )
                   )}
                 </div>
               </div>
               {/* Backend */}
               <div className=" pb-5">
-                <h2 className=" text-center text-xl font-bold pb-2">
-                  Backend
-                </h2>
-                <div className=" flex justify-center">
+                <h2 className=" text-center text-xl font-bold pb-2">Backend</h2>
+                <div className=" flex flex-wrap justify-center">
                   {backendSkills.map((s) =>
                     backendSkills[backendSkills.length - 1].skill != s.skill
-                      ? s.skill + ", "
-                      : s.skill
+                      ? <span key={s.id}>{s.skill + ", "}</span>
+                      : <span key={s.id}>{s.skill}</span>
                   )}
                 </div>
               </div>
@@ -201,11 +202,11 @@ export default function AboutPage() {
                 <h2 className=" text-center text-xl font-bold pb-2">
                   Development Tools
                 </h2>
-                <div className=" flex justify-center">
+                <div className=" flex flex-wrap justify-center">
                   {devTools.map((s) =>
                     devTools[devTools.length - 1].skill != s.skill
-                      ? s.skill + ", "
-                      : s.skill
+                      ? <span key={s.id}>{s.skill + ", "}</span>
+                      : <span key={s.id}>{s.skill}</span>
                   )}
                 </div>
               </div>
