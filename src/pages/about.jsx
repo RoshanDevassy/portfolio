@@ -178,8 +178,8 @@ export default function AboutPage() {
                 <div className=" flex justify-center">
                   {frontendSkills.map((s) =>
                     frontendSkills[frontendSkills.length - 1].skill != s.skill
-                      ? s.skill + ", "
-                      : s.skill
+                      ? <p>{s.skill + ", "}</p>
+                      : <p>{s.skill}</p>
                   )}
                 </div>
               </div>
