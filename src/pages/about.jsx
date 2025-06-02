@@ -9,26 +9,32 @@ export default function AboutPage() {
     {
       id: 1,
       skill: "HTML",
+      iconSrc: "/images/skillsIcon/html5.png",
     },
     {
       id: 2,
       skill: "CSS",
+      iconSrc: "/images/skillsIcon/css3.png",
     },
     {
       id: 3,
-      skill: "Tailwind CSS",
+      skill: "TailwindCSS",
+      iconSrc: "/images/skillsIcon/tailwind.png",
     },
     {
       id: 4,
       skill: "JavaScript",
+      iconSrc: "/images/skillsIcon/js.png",
     },
     {
       id: 5,
       skill: "React.js",
+      iconSrc: "/images/skillsIcon/reactjs.png",
     },
     {
       id: 6,
       skill: "Next.js (Familiarity)",
+      iconSrc: "/images/skillsIcon/nextjs.png",
     },
   ];
 
@@ -36,35 +42,46 @@ export default function AboutPage() {
     {
       id: 1,
       skill: "Python",
+      iconSrc: "/images/skillsIcon/python.png",
     },
     {
       id: 2,
       skill: "Django (REST API Development)",
+      iconSrc: "/images/skillsIcon/django.png",
     },
     {
       id: 3,
       skill: "SQLite",
+      iconSrc: "/images/skillsIcon/sqlite.png",
     },
     {
       id: 4,
       skill: "PostgreSQL",
+      iconSrc: "/images/skillsIcon/postgresql.png",
     },
   ];
 
   const devTools = [
     {
       id: 1,
-      skill: "Git & GitHub",
+      skill: "Git",
+      iconSrc: "/images/skillsIcon/git.png",
     },
     {
       id: 2,
-      skill: "Visual Studio Code",
+      skill: "GitHub",
+      iconSrc: "/images/skillsIcon/github.png",
+    },
+    {
+      id: 3,
+      skill: "VS Code",
+      iconSrc: "/images/skillsIcon/vscode.png",
     },
   ];
 
   return (
     <>
-      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white">
+      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white bg-black">
         <div
           className="absolute h-full w-full bg-[url('/images/bg_education.png')] bg-slate-800 -z-50 bg-contain bg-blend-screen bg-repeat-y"
           ref={parallax.ref}
@@ -84,8 +101,9 @@ export default function AboutPage() {
             <p>
               Hi there! I'm an enthusiastic Full-Stack Developer who specializes
               in building responsive and dynamic web applications. With
-              proficiency in Django, Tailwind CSS, Next.js, and React, I like
-              constructing reliable back-end solutions and smooth user
+              proficiency in HTML, CSS, TailwindCSS, JavaScript, React.js,
+              Python, Django(REST API Framework) and Next.js(Familiarity) , I
+              like constructing reliable back-end solutions and smooth user
               experiences.
             </p>
             <p>
@@ -108,7 +126,7 @@ export default function AboutPage() {
             </div>
             <table className="  bg-opacity-90 flex flex-col py-10 font-black lg:text-lg">
               <thead>
-                <tr className="grid grid-cols-4 md:grid-cols-5 bg-gray-200 dark:bg-gray-600 items-center">
+                <tr className="grid grid-cols-4 md:grid-cols-5 items-center">
                   <th>Course</th>
                   <th className=" md:col-span-2">College</th>
                   <th>
@@ -169,44 +187,44 @@ export default function AboutPage() {
                 TECHNICAL SKILLS KNOWN
               </h3>
             </div>
-            <div className="md:text-base lg:text-lg">
+            <div className="flex flex-col gap-10 md:text-base lg:text-lg">
               {/* Frontend */}
-              <div className=" pb-5">
-                <h2 className=" text-center text-xl font-bold pb-2">
+              <div className="flex flex-col items-center gap-y-5">
+                <h2 className=" text-center text-2xl font-bold">
                   Frontend
                 </h2>
-                <div className="flex flex-wrap justify-center">
-                  {frontendSkills.map((s) =>
-                    frontendSkills[frontendSkills.length - 1].skill !=
-                    s.skill ? (
-                      <span key={s.id}>{s.skill + ", "}</span>
-                    ) : (
-                      <span key={s.id}>{s.skill}</span>
-                    )
-                  )}
+                <div className="grid grid-cols-2 lg:grid-cols-6 gap-y-4">
+                  {frontendSkills.map((s) => (
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                      <p className="text-center">{s.skill}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               {/* Backend */}
-              <div className=" pb-5">
-                <h2 className=" text-center text-xl font-bold pb-2">Backend</h2>
-                <div className=" flex flex-wrap justify-center">
+              <div className="flex flex-col items-center gap-y-5">
+                <h2 className=" text-center text-2xl font-bold">Backend</h2>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-4">
                   {backendSkills.map((s) =>
-                    backendSkills[backendSkills.length - 1].skill != s.skill
-                      ? <span key={s.id}>{s.skill + ", "}</span>
-                      : <span key={s.id}>{s.skill}</span>
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                      <p className="text-center">{s.skill}</p>
+                    </div>
                   )}
                 </div>
               </div>
-              {/* Development Tools */}
-              <div className=" pb-5">
-                <h2 className=" text-center text-xl font-bold pb-2">
-                  Development Tools
+              {/* Tools */}
+              <div className="flex flex-col items-center gap-y-5">
+                <h2 className=" text-center text-2xl font-bold">
+                  Tools
                 </h2>
-                <div className=" flex flex-wrap justify-center">
+                <div className=" grid grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-5">
                   {devTools.map((s) =>
-                    devTools[devTools.length - 1].skill != s.skill
-                      ? <span key={s.id}>{s.skill + ", "}</span>
-                      : <span key={s.id}>{s.skill}</span>
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                      <p className="text-center">{s.skill}</p>
+                    </div>
                   )}
                 </div>
               </div>

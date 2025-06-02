@@ -5,23 +5,22 @@ export default function ContactPage() {
   return (
     <>
       <section
-        className="relative min-h-screen md:flex md:justify-center md:items-center w-full min-w-[250px] text-white"
+        className="relative min-h-screen min-w-[250px] text-white"
         id="contactpage"
       >
         <div className=" absolute h-full w-full -z-30 bg-[url('/images/bg_contact.jpg')] bg-cover"></div>
         {/* Wrapper */}
-        <div className=" flex flex-col md:flex-row  items-center md:portrait:items-start md:landscape:items-start md:landscape:justify-center xl:justify-self-center md:justify-center gap-16 md:landscape:gap-0  pb-10 pt-10 md:pt-16 lg:pt-20 2xl:pt-28 md:gap-5  md:portrait:w-[95%]">
+        
           {/* Contact Me */}
-          <section className="flex flex-col items-center md:items-start gap-9  px-2 md:w-[45%] md:text-lg lg:text-xl">
+          <section className="flex flex-col items-center gap-9 px-2 pt-10 md:pt-14 lg:pt-16 xl:pt-20">
             <div>
-              <h1 className="justify-self-center md:justify-self-auto font-black md:text-xl  2xl:text-4xl font-serif">
+              <h1 className="justify-self-center md:justify-self-auto font-black text-xl c-base:text-2xl md:text-3xl  2xl:text-4xl font-serif">
                 Contact Me
               </h1>
             </div>
-            <div className="flex justify-center md:justify-normal ">
+            <div className="flex justify-center">
               <p
-                className=" text-justify
-                 md:w-auto px-2 md:px-0 md:landscape:w-[80%] c-base:portrait:w-[75%] "
+                className=" text-justify px-2 md:px-0"
               >
                 I'd adore hearing from you! Kindly contact me personally or Send
                 me a message.
@@ -30,21 +29,29 @@ export default function ContactPage() {
             <div className="flex flex-col gap-3">
               <a href="http://www.linkedin.com/in/roshantp" target="_blank">
                 <div className="flex gap-2">
-                  <img src="images/linkedin.png" alt="linkedin" className="h-6" />
+                  <img
+                    src="images/linkedin.png"
+                    alt="linkedin"
+                    className="h-6"
+                  />
                   Linked In
                 </div>
               </a>
               <a href="mailto:roshan.dev.tp@gmail.com">
                 <div className="flex gap-2">
-                  <img src="images/email.png" alt="email" className="h-6"/>
-                roshan.dev.tp@gmail.com
+                  <img src="images/email.png" alt="email" className="h-6" />
+                  roshan.dev.tp@gmail.com
                 </div>
               </a>
               <div className="flex gap-2">
-               <img src="images/whatsapp_phone.png" alt="call" className="h-6"/> +91 85239 81494
+                <img
+                  src="images/whatsapp_phone.png"
+                  alt="call"
+                  className="h-6"
+                />
+                +91 85239 81494
+              </div>
             </div>
-            </div>
-            
           </section>
           {/* Form */}
           {/* <section className=" md:w-[45%] flex md:landscape:justify-center lg:text-lg">
@@ -111,7 +118,7 @@ export default function ContactPage() {
               </div>
             </form>
           </section> */}
-        </div>
+        
       </section>
     </>
   );
