@@ -193,12 +193,13 @@ export default function AboutPage() {
                 <h2 className=" text-center text-2xl font-bold">
                   Frontend
                 </h2>
-                <div className=" flex justify-center">
-                  {frontendSkills.map((s) =>
-                    frontendSkills[frontendSkills.length - 1].skill != s.skill
-                      ? <p>{s.skill + ", "}</p>
-                      : <p>{s.skill}</p>
-                  )}
+                <div className="grid grid-cols-2 lg:grid-cols-6 gap-y-4">
+                  {frontendSkills.map((s) => (
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                      <p className="text-center">{s.skill}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               {/* Backend */}
