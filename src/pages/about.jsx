@@ -101,11 +101,11 @@ export default function AboutPage() {
             <p>
               Hi there! I'm an enthusiastic Full-Stack Developer who specializes
               in building responsive and dynamic web applications. With
-              proficiency in HTML, CSS, TailwindCSS, JavaScript, React.js,
-              Python, Django(REST API Framework) and Next.js(Familiarity) , I
+              proficiency in HTML, CSS, TailwindCSS, JavaScript, React.js, NodeJs(ExpressJs) and MongoDB. I
               like constructing reliable back-end solutions and smooth user
               experiences.
             </p>
+            <p>Coming to Education, I have completed B.C.A(2023) and M.C.A(2025)</p>
             <p>
               My interest in the way that technology can turn concepts into
               reality led me to pursue a career in web development. I have
