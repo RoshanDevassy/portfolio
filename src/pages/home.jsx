@@ -38,7 +38,7 @@ export default function Home() {
                 I'M
                 <br /> ROSHAN DEVASSY
               </h1>
-              <h3 className="md:text-3xl ">FULL STACK DEVELOPER</h3>
+              <h3 className="md:text-3xl ">MERN Stack Developer</h3>
               <DownloadButton />
             </div>
           </div>

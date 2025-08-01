@@ -31,11 +31,11 @@ export default function AboutPage() {
       skill: "React.js",
       iconSrc: "/images/skillsIcon/reactjs.png",
     },
-    {
+   /*  {
       id: 6,
       skill: "Next.js (Familiarity)",
       iconSrc: "/images/skillsIcon/nextjs.png",
-    },
+    }, */
   ];
 
   const backendSkills = [
