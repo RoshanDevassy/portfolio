@@ -118,7 +118,7 @@ export default function AboutPage() {
         </section>
         <div className="flex flex-col gap-20 w-full items-center">
           {/* EDUCATION DETAILS Wrapper */}
-          <section className="flex flex-col gap-5 pt-14 lg:w-[85%] bg-white dark:bg-black">
+          {/* <section className="flex flex-col gap-5 pt-14 lg:w-[85%] bg-white dark:bg-black">
             <div className="flex justify-center items-center">
               <h1 className=" text-2xl font-black md:text-6xl font-serif ">
                 Education
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 </tr>
               </tbody>
             </table>
-          </section>
+          </section> */}
           {/* PROFESSIONAL Wrapper */}
           <section className="flex flex-col gap-10 md:w-[85%] bg-white dark:bg-black  px-2 py-5 md:py-16 w-full">
             <div className="flex flex-col items-center">
