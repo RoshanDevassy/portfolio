@@ -44,7 +44,7 @@ export default function AboutPage() {
       skill: "Python",
       iconSrc: "/images/skillsIcon/python.png",
     },
-    {
+   /*  {
       id: 2,
       skill: "Django (REST API Development)",
       iconSrc: "/images/skillsIcon/django.png",
@@ -58,7 +58,7 @@ export default function AboutPage() {
       id: 4,
       skill: "PostgreSQL",
       iconSrc: "/images/skillsIcon/postgresql.png",
-    },
+    }, */
   ];
 
   const devTools = [
@@ -193,19 +193,19 @@ export default function AboutPage() {
                 <h2 className=" text-center text-2xl font-bold">
                   Frontend
                 </h2>
-                <div className="grid grid-cols-2 lg:grid-cols-6 gap-y-4">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full  gap-y-5 justify-center items-center max-w-7xl ">
                   {frontendSkills.map((s) => (
                     <div className="flex flex-col items-center justify-center gap-1">
-                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                      <img src={s.iconSrc} className="h-12 w-12 object-contain " alt={s.skill} />
                       <p className="text-center">{s.skill}</p>
                     </div>
                   ))}
                 </div>
               </div>
               {/* Backend */}
-              <div className="flex flex-col items-center gap-y-5">
+              <div className="flex flex-col items-center gap-y-5 py-5">
                 <h2 className=" text-center text-2xl font-bold">Backend</h2>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-4">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-7xl">
                   {backendSkills.map((s) =>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <img src={s.iconSrc} className="h-12 w-12 object-contain " />
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 <h2 className=" text-center text-2xl font-bold">
                   Tools
                 </h2>
-                <div className=" grid grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-5">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-7xl">
                   {devTools.map((s) =>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <img src={s.iconSrc} className="h-12 w-12 object-contain " />
