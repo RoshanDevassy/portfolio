@@ -189,13 +189,13 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-col gap-10 md:text-base lg:text-lg">
               {/* Frontend */}
-              <div className="flex flex-col items-center gap-y-5">
+              <div className="flex flex-col items-center gap-y-10">
                 <h2 className=" text-center text-2xl font-bold">
                   Frontend
                 </h2>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full  gap-y-5 justify-center items-center max-w-7xl ">
-                  {frontendSkills.map((s) => (
-                    <div className="flex flex-col items-center justify-center gap-1">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full  gap-y-5 justify-center items-center max-w-4xl ">
+                  {frontendSkills.map((s,index) => (
+                    <div key={index} className="flex flex-col items-center justify-center gap-1">
                       <img src={s.iconSrc} className="h-12 w-12 object-contain " alt={s.skill} />
                       <p className="text-center">{s.skill}</p>
                     </div>
@@ -203,11 +203,11 @@ export default function AboutPage() {
                 </div>
               </div>
               {/* Backend */}
-              <div className="flex flex-col items-center gap-y-5 py-5">
+              <div className="flex flex-col items-center gap-y-10 py-10">
                 <h2 className=" text-center text-2xl font-bold">Backend</h2>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-7xl">
-                  {backendSkills.map((s) =>
-                    <div className="flex flex-col items-center justify-center gap-1">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-4xl">
+                  {backendSkills.map((s,index) =>
+                    <div key={index} className="flex flex-col items-center justify-center gap-1">
                       <img src={s.iconSrc} className="h-12 w-12 object-contain " />
                       <p className="text-center">{s.skill}</p>
                     </div>
@@ -215,13 +215,13 @@ export default function AboutPage() {
                 </div>
               </div>
               {/* Tools */}
-              <div className="flex flex-col items-center gap-y-5">
+              <div className="flex flex-col items-center gap-y-10">
                 <h2 className=" text-center text-2xl font-bold">
                   Tools
                 </h2>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-7xl">
-                  {devTools.map((s) =>
-                    <div className="flex flex-col items-center justify-center gap-1">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-4xl">
+                  {devTools.map((s,index) =>
+                    <div key={index} className="flex flex-col items-center justify-center gap-1">
                       <img src={s.iconSrc} className="h-12 w-12 object-contain " />
                       <p className="text-center">{s.skill}</p>
                     </div>

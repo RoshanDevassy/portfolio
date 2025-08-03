@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function Projects() {
   const projects = [
-    {
+    /* {
       id: 1,
       projectname: "PortFolio",
       link: "",
-    },
+    }, */
     {
       id: 2,
       projectname: "Budget Calculator",
       link: "https://calc-budgeting.netlify.app/",
+    },
+    {
+      id: 3,
+      projectname: "Solar Panel Fault Detection Using Deep Learning",
+      link: "https://frontend-solarpanel.onrender.com",
     },
   ];
 
@@ -32,7 +37,7 @@ export default function Projects() {
                   onClick={() => alert("This is the Current Project")}
                   key={p.id}
                 >
-                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg">
+                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg text-center m-auto">
                     {p.projectname}
                   </span>
                 </button>
@@ -45,7 +50,7 @@ export default function Projects() {
                   rel="noopenernoreferrer"
                   className="flex justify-center items-end p-1 hover:opacity-75 c-base:min-w-[250px] h-[150px] w-[50%] min-w-[220px] bg-red-500 "
                 >
-                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg">
+                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg text-center m-auto">
                     {p.projectname}
                   </span>
                 </Link>
