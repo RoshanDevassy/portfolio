@@ -31,7 +31,7 @@ export default function AboutPage() {
       skill: "React.js",
       iconSrc: "/images/skillsIcon/reactjs.png",
     },
-   /*  {
+    /*  {
       id: 6,
       skill: "Next.js (Familiarity)",
       iconSrc: "/images/skillsIcon/nextjs.png",
@@ -41,24 +41,25 @@ export default function AboutPage() {
   const backendSkills = [
     {
       id: 1,
-      skill: "Python",
-      iconSrc: "/images/skillsIcon/python.png",
-    },
-   /*  {
-      id: 2,
-      skill: "Django (REST API Development)",
-      iconSrc: "/images/skillsIcon/django.png",
+      skill: "Node.js",
+      iconSrc: "/images/skillsIcon/nodejs.png",
     },
     {
+      id: 2,
+      skill: "Express.js",
+      iconSrc: "/images/skillsIcon/expressjs.png",
+    },
+    
+    {
       id: 3,
-      skill: "SQLite",
-      iconSrc: "/images/skillsIcon/sqlite.png",
+      skill: "MongoDB",
+      iconSrc: "/images/skillsIcon/mongodb.png",
     },
     {
       id: 4,
-      skill: "PostgreSQL",
-      iconSrc: "/images/skillsIcon/postgresql.png",
-    }, */
+      skill: "Mongoose",
+      iconSrc: "/images/skillsIcon/mongoose.png",
+    }, 
   ];
 
   const devTools = [
@@ -77,11 +78,21 @@ export default function AboutPage() {
       skill: "VS Code",
       iconSrc: "/images/skillsIcon/vscode.png",
     },
+    {
+      id: 4,
+      skill: "Thunder Client",
+      iconSrc: "/images/skillsIcon/thunderclient.jpeg",
+    },
+    {
+      id: 5,
+      skill: "Post Man",
+      iconSrc: "/images/skillsIcon/postman.png",
+    },
   ];
 
   return (
     <>
-      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white bg-black">
+      <section className=" relative pb-10 flex flex-col items-center gap-5 text-black dark:text-white bg-neutral-900">
         <div
           className="absolute h-full w-full bg-[url('/images/bg_education.png')] bg-slate-800 -z-50 bg-contain bg-blend-screen bg-repeat-y"
           ref={parallax.ref}
@@ -89,7 +100,7 @@ export default function AboutPage() {
 
         {/* About me Wrapper */}
         <section
-          className=" w-full lg:w-[85%] c-min-h-max-w:w-full bg-white dark:bg-black relative c-min-h-max-w:top-0 lg:-top-44 2xl:-top-40 flex flex-col px-2 py-2 pt-14 pb-14 md:px-0 gap-3 md:gap-5"
+          className=" w-full lg:w-[85%] c-min-h-max-w:w-full bg-neutral-300 dark:bg-neutral-800 relative c-min-h-max-w:top-0 lg:-top-44 2xl:-top-40 flex flex-col px-2 py-2 pt-14 pb-14 md:px-0 gap-3 md:gap-5 rounded-2xl"
           id="about"
         >
           <div className="flex place-content-center">
@@ -101,11 +112,13 @@ export default function AboutPage() {
             <p>
               Hi there! I'm an enthusiastic Full-Stack Developer who specializes
               in building responsive and dynamic web applications. With
-              proficiency in HTML, CSS, TailwindCSS, JavaScript, React.js, NodeJs(ExpressJs) and MongoDB. I
-              like constructing reliable back-end solutions and smooth user
-              experiences.
+              proficiency in HTML, CSS, TailwindCSS, JavaScript, React.js,
+              NodeJs(ExpressJs) and MongoDB. I like constructing reliable
+              back-end solutions and smooth user experiences.
             </p>
-            <p>Coming to Education, I have completed B.C.A(2023) and M.C.A(2025)</p>
+            <p>
+              Coming to Education, I have completed B.C.A(2023) and M.C.A(2025)
+            </p>
             <p>
               My interest in the way that technology can turn concepts into
               reality led me to pursue a career in web development. I have
@@ -178,7 +191,7 @@ export default function AboutPage() {
             </table>
           </section> */}
           {/* PROFESSIONAL Wrapper */}
-          <section className="flex flex-col gap-10 md:w-[85%] bg-white dark:bg-black  px-2 py-5 md:py-16 w-full">
+          <section className="flex flex-col gap-10 md:w-[85%] bg-neutral-300  dark:bg-neutral-800  px-2 py-5 md:py-16 w-full rounded-2xl shadow-2xl">
             <div className="flex flex-col items-center">
               <h1 className=" text-2xl md:text-6xl font-extrabold ">
                 PROFESSIONAL
@@ -190,13 +203,18 @@ export default function AboutPage() {
             <div className="flex flex-col gap-10 md:text-base lg:text-lg">
               {/* Frontend */}
               <div className="flex flex-col items-center gap-y-10">
-                <h2 className=" text-center text-2xl font-bold">
-                  Frontend
-                </h2>
+                <h2 className=" text-center text-2xl font-bold">Frontend</h2>
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full  gap-y-5 justify-center items-center max-w-4xl ">
-                  {frontendSkills.map((s,index) => (
-                    <div key={index} className="flex flex-col items-center justify-center gap-1">
-                      <img src={s.iconSrc} className="h-12 w-12 object-contain " alt={s.skill} />
+                  {frontendSkills.map((s, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center justify-center gap-1"
+                    >
+                      <img
+                        src={s.iconSrc}
+                        className="h-12 w-12 object-contain "
+                        alt={s.skill}
+                      />
                       <p className="text-center">{s.skill}</p>
                     </div>
                   ))}
@@ -206,26 +224,36 @@ export default function AboutPage() {
               <div className="flex flex-col items-center gap-y-10 py-10">
                 <h2 className=" text-center text-2xl font-bold">Backend</h2>
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-4xl">
-                  {backendSkills.map((s,index) =>
-                    <div key={index} className="flex flex-col items-center justify-center gap-1">
-                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                  {backendSkills.map((s, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center justify-center gap-1"
+                    >
+                      <img
+                        src={s.iconSrc}
+                        className="h-12 w-fit object-contain dark:bg-white rounded-full"
+                      />
                       <p className="text-center">{s.skill}</p>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
               {/* Tools */}
               <div className="flex flex-col items-center gap-y-10">
-                <h2 className=" text-center text-2xl font-bold">
-                  Tools
-                </h2>
+                <h2 className=" text-center text-2xl font-bold">Tools</h2>
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-full justify-items-center items-center gap-y-5 max-w-4xl">
-                  {devTools.map((s,index) =>
-                    <div key={index} className="flex flex-col items-center justify-center gap-1">
-                      <img src={s.iconSrc} className="h-12 w-12 object-contain " />
+                  {devTools.map((s, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center justify-center gap-1"
+                    >
+                      <img
+                        src={s.iconSrc}
+                        className="h-12 w-12 object-contain rounded-full"
+                      />
                       <p className="text-center">{s.skill}</p>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
             </div>

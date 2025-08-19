@@ -25,7 +25,7 @@ export default function Projects() {
         <div className="absolute h-full w-full bg-slate-900 -z-30 bg-[url('/images/bg_project.jpg')] bg-cover bg-top bg-no-repeat bg-blend-screen"></div>
         <div className="flex flex-col gap-6 md:gap-10 2xl:gap-20 pb-10 pt-10 md:pt-14  ">
           <div className="flex justify-center items-center">
-            <h1 className=" text-4xl py-1 font-extrabold font-serif">
+            <h1 className=" text-4xl py-1 font-extrabold font-serif text-white">
               My Projects
             </h1>
           </div>
