@@ -39,7 +39,7 @@ export default function Projects() {
               My Projects
             </h1>
           </div>
-          <div className="grid grid-flow-row justify-center gap-y-10 c-base:grid-cols-3 md:w-[90%] md:place-items-center">
+          <div className="grid grid-flow-row  gap-y-10 c-base:grid-cols-3 md:w-[90%] place-items-center">
             {projects.map((p) => (
               <Link
                 to={p.link}
