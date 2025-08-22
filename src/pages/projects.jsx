@@ -40,32 +40,20 @@ export default function Projects() {
             </h1>
           </div>
           <div className="flex flex-col items-center  c-base:justify-center md:flex-row gap-10 mt-10 px-2">
-            {projects.map((p) =>
-              p.id === 1 ? (
-                <button
-                  className="h-[150px] w-[50%] c-base:min-w-[250px]  min-w-[220px] flex justify-center items-end p-1 hover:opacity-75 bg-blue-500"
-                  onClick={() => alert("This is the Current Project")}
-                  key={p.id}
-                >
-                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg text-center m-auto">
-                    {p.projectname}
-                  </span>
-                </button>
-              ) : (
-                <Link
-                  to={p.link}
-                  target="_blank"
-                  id="p_link"
-                  key={p.id}
-                  rel="noopenernoreferrer"
-                  className="flex justify-center items-end p-1 hover:opacity-75 c-base:min-w-[250px] h-[150px] w-[50%] min-w-[220px] bg-red-500 "
-                >
-                  <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg text-center m-auto">
-                    {p.projectname}
-                  </span>
-                </Link>
-              )
-            )}
+            {projects.map((p) => (
+              <Link
+                to={p.link}
+                target="_blank"
+                id="p_link"
+                key={p.id}
+                rel="noopenernoreferrer"
+                className="flex justify-center items-end p-1 hover:opacity-75 c-base:min-w-[250px] h-[150px] w-[50%] min-w-[220px] bg-red-500 "
+              >
+                <span className="hover:opacity-100 text-white font-bold md:text-base lg:text-lg text-center m-auto">
+                  {p.projectname}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
