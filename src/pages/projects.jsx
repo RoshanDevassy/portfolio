@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function Projects() {
   const projects = [
-    /* {
+    {
       id: 1,
-      projectname: "PortFolio",
-      link: "",
-    }, */
+      projectname: "Website Clone",
+      link: "https://ecommerce-eren-clone.netlify.app/",
+    },
     {
       id: 2,
       projectname: "Budget Calculator",
@@ -16,6 +16,16 @@ export default function Projects() {
       id: 3,
       projectname: "Solar Panel Fault Detection Using Deep Learning",
       link: "https://frontend-solarpanel.onrender.com",
+    },
+    {
+      id: 4,
+      projectname: "Product Website(Fake API)",
+      link: "http://fakeapi0.netlify.app",
+    },
+    {
+      id: 5,
+      projectname: "E-commerce Website",
+      link: "https://ecommerce-project-alpha-five.vercel.app/",
     },
   ];
 
