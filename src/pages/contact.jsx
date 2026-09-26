@@ -1,125 +1,84 @@
 import { Link } from "react-router-dom";
 
-/* className=" md:h-screen custom-base:min-h-max w-full min-w-[250px] */
 export default function ContactPage() {
+  const contactMethods = [
+    {
+      id: 1,
+      label: "LinkedIn",
+      value: "linkedin.com/in/roshantp",
+      href: "http://www.linkedin.com/in/roshantp",
+      imgSrc: "images/linkedin.png",
+      target: "_blank",
+    },
+    {
+      id: 2,
+      label: "Email",
+      value: "roshan.dev.tp@gmail.com",
+      href: "mailto:roshan.dev.tp@gmail.com",
+      imgSrc: "images/email.png",
+      target: "_self",
+    },
+    {
+      id: 3,
+      label: "WhatsApp / Phone",
+      value: "+91 85239 81494",
+      href: "tel:+918523981494", // Makes it clickable on mobile
+      imgSrc: "images/whatsapp_phone.png",
+      target: "_self",
+    },
+  ];
+
   return (
-    <>
-      <section
-        className="relative min-h-screen min-w-[250px] text-white"
-        id="contactpage"
-      >
-        <div className=" absolute h-full w-full -z-30 bg-[url('/images/bg_contact.jpg')] bg-cover"></div>
-        {/* Wrapper */}
+    <section 
+      className="relative min-h-screen flex items-center justify-center bg-slate-950 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-slate-950 to-slate-950 overflow-hidden py-24 px-4"
+      id="contactpage"
+    >
+      {/* Main Content Card (Solid background for buttery 60fps performance) */}
+      <div className="relative z-10 w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-14 shadow-2xl flex flex-col gap-10">
         
-          {/* Contact Me */}
-          <section className="flex flex-col items-center gap-9 px-2 pt-10 md:pt-14 lg:pt-16 xl:pt-20">
-            <div>
-              <h1 className="justify-self-center md:justify-self-auto font-black text-xl c-base:text-2xl md:text-3xl  2xl:text-4xl font-serif">
-                Contact Me
-              </h1>
-            </div>
-            <div className="flex justify-center">
-              <p
-                className=" text-justify px-2 md:px-0"
-              >
-                I'd adore hearing from you! Kindly contact me personally or Send
-                me a message.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <a href="http://www.linkedin.com/in/roshantp" target="_blank">
-                <div className="flex gap-2">
-                  <img
-                    src="images/linkedin.png"
-                    alt="linkedin"
-                    className="h-6"
-                  />
-                  Linked In
-                </div>
-              </a>
-              <a href="mailto:roshan.dev.tp@gmail.com">
-                <div className="flex gap-2">
-                  <img src="images/email.png" alt="email" className="h-6" />
-                  roshan.dev.tp@gmail.com
-                </div>
-              </a>
-              <div className="flex gap-2">
-                <img
-                  src="images/whatsapp_phone.png"
-                  alt="call"
-                  className="h-6"
-                />
-                +91 85239 81494
-              </div>
-            </div>
-          </section>
-          {/* Form */}
-          {/* <section className=" md:w-[45%] flex md:landscape:justify-center lg:text-lg">
-            <form
-              action=""
-              className="flex flex-col gap-5 min-w-[250px] max-xs:px-3"
+        {/* Header Section */}
+        <div className="flex flex-col items-center gap-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Connect</span>
+          </h1>
+          <p className="text-slate-300 md:text-lg max-w-md leading-relaxed mt-2">
+            I'd adore hearing from you! Whether you have a question or just want to say hi, my inbox is always open.
+          </p>
+        </div>
+
+        {/* Contact Links Grid */}
+        <div className="flex flex-col gap-4 w-full mx-auto mt-4">
+          {contactMethods.map((method) => (
+            <a
+              key={method.id}
+              href={method.href}
+              target={method.target}
+              rel={method.target === "_blank" ? "noopener noreferrer" : ""}
+              className="group flex items-center gap-4 md:gap-6 p-4 md:p-5 rounded-2xl bg-slate-800 border border-slate-700/50 hover:bg-slate-700 hover:-translate-y-1 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] transition-all duration-300 w-full"
             >
-              <div className="flex gap-5 md:w-80 flex-col md:flex-row ">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="firstname">First Name</label>
-                  <input
-                    type="text"
-                    name="firstname"
-                    id="firstname"
-                    className="w-full h-8 p-1 bg-white text-black border-black border"
-                    autoComplete="given-name"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="lastname">Last Name</label>
-                  <input
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                    className="w-full h-8 p-1 bg-white text-black border-black border"
-                    autoComplete="family-name"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email">E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="w-full h-8 p-1 bg-white text-black border-black border"
-                  autoComplete="email"
+              {/* Icon Container */}
+              <div className="h-14 w-14 shrink-0 flex items-center justify-center bg-slate-900 rounded-full p-3 group-hover:scale-110 transition-transform duration-300">
+                <img
+                  src={method.imgSrc}
+                  alt={method.label}
+                  loading="lazy"
+                  className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="phonenumber">Phone</label>
-                <input
-                  type="tel"
-                  name="phonenumber"
-                  id="phonenumber"
-                  className="h-8 p-1 bg-white text-black border-black border"
-                  autoComplete="tel"
-                />
+
+              {/* Text Container */}
+              <div className="flex flex-col overflow-hidden">
+                <span className="text-sm text-slate-400 font-medium mb-1">
+                  {method.label}
+                </span>
+                <span className="text-slate-200 md:text-lg font-semibold truncate group-hover:text-white transition-colors duration-300">
+                  {method.value}
+                </span>
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  rows="5"
-                  id="message"
-                  name="message"
-                  className="resize-none p-1 bg-white text-black border-black border"
-                  autoComplete="on"
-                ></textarea>
-              </div>
-              <div>
-                <button type="submit" className="w-full bg-green-500 py-2">
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </section> */}
-        
-      </section>
-    </>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

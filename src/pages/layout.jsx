@@ -3,6 +3,7 @@ import Home from "./home";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Projects from "./projects";
 import ContactPage from "./contact";
+import Certifications from "./certifications";
 
 export default function LayoutPage() {
   return (
@@ -11,6 +12,7 @@ export default function LayoutPage() {
         <Home />
         <AboutPage />
         <Projects/>
+        <Certifications/>
         <ContactPage/>
       </ParallaxProvider>
     </>

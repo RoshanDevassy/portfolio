@@ -1,49 +1,104 @@
-import { useParallax } from "react-scroll-parallax";
-import DownloadButton from "../components/downloadbutton";
+import { motion } from "framer-motion";
+// 1. Make sure to import Link at the very top of your file
+import { Link } from "react-router-dom";
+import DownloadButton from "../components/downloadbutton"; // Assuming you still have this
 
 export default function Home() {
+  // Staggered animation variants for smooth text loading
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
 
-  const parallax1 = useParallax({
-    translateY: [-150, 150],
-  });
-
-  const parallax2 = useParallax({
-    translateY: [-150,150],
-  });
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
 
   return (
-    /* c-min-h-max-w:bg-[url('/images/bg_hero_sm.jpg')] */
-    <>
-      <div
-        className={`relative w-full h-full min-w-[250px]    lg:bg-none    py-16 `} 
-        id="homepage"
-      >
-        <section className=" c-min-h-max-w:min-h-full  lg:min-h-screen">
-          <div
-            className={`absolute h-full w-full lg:bg-[35vw] xl:bg-[33vw] 2xl:bg-[50vw] -z-50 bg-contain bg-right-top bg-no-repeat bg-slate-500 hidden lg:block  lg:bg-[url('/images/bg_hero_lg.png')] bg-blend-overlay c-min-h-max-w:hidden`}
-            ref={parallax1.ref}  
-          >
-           {/*  <img
-              src="/images/heroimg.png"
-              alt=""
-              className="absolute h-full -top-28 -right-72 filter bg-blend-screen"
-             
-            /> */}
-          </div>
-          <div className=" absolute w-full min-h-screen bg-neutral-500 bg-[url('/images/bg_hero_sm.jpg')] c-min-h-max-w:bg-[url('/images/bg_hero_sm.jpg')] bg-cover bg-center -z-50 md:bg-transparent lg:bg-none" ref={parallax2.ref}></div>
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950">
+      {/* Modern Gradient Orbs (Replaces Background Images) */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-600/20 blur-[120px] mix-blend-screen pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-purple-600/20 blur-[120px] mix-blend-screen pointer-events-none"></div>
 
-          <div className="flex items-center justify-center lg:w-[60%] xl:w-[60%] c-min-h-max-w:w-full c-min-h-max-w:min-h-full lg:min-h-screen ">
-            <div className="flex flex-col gap-3 text-black c-min-h-max-w:text-black lg:text-white">
-              <h1 className="text-2xl md:text-4xl 2xl:text-6xl font-extrabold leading-tight md:max-w-max tracking-wider ">
-                I'M
-                <br /> ROSHAN DEVASSY
-              </h1>
-              <h3 className="md:text-3xl ">MERN Stack Developer</h3>
-              <DownloadButton />
+      <div className="relative z-10 w-full max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between">
+        {/* Left Content Column */}
+        <motion.div
+          className="flex flex-col gap-6 text-white w-full md:w-2/3"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-4"
+          >
+            <div className="h-[2px] w-12 bg-blue-500"></div>
+            <span className="text-blue-400 font-mono tracking-widest text-sm uppercase">
+              Welcome to my portfolio
+            </span>
+          </motion.div>
+
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.1]"
+          >
+            Hi, I'm <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              Roshan Devassy
+            </span>
+          </motion.h1>
+
+          <motion.h3
+            variants={itemVariants}
+            className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mt-4"
+          >
+            A passionate{" "}
+            <strong className="text-white font-medium">
+              MERN Stack Developer
+            </strong>{" "}
+            crafting seamless, high-performance web applications from front to
+            back.
+          </motion.h3>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 flex gap-4 items-center"
+          >
+            <DownloadButton />
+            <Link
+              to="/projects"
+              className="px-6 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-300"
+            >
+              View My Work
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Optional Right Column for a minimalist geometric element or photo */}
+        <motion.div
+          className="hidden md:flex w-1/3 justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        >
+          {/* Abstract rotating shape as a stylish filler if you have no image */}
+          <div className="relative w-64 h-64">
+            <div className="absolute inset-0 border-2 border-blue-500/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+            <div className="absolute inset-4 border-2 border-purple-500/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full backdrop-blur-sm border border-white/10 flex items-center justify-center">
+              <span className="font-mono text-4xl text-white/50">{"</>"}</span>
             </div>
           </div>
-        </section>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 }
